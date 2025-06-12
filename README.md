@@ -59,8 +59,8 @@ suggestionhub/
 │ ├── index.html
 │ ├── css/
 │ └── js/
-├── assets/
-├── docs/
+| └── assets/
+├── documents/
 └── README.md
 
 ---
