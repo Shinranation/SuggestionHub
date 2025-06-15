@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuggestionHub - Discover Your World</title>
+    
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo"><i class="fa-solid fa-map-location-dot"></i> SuggestionHub</a>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+            <!-- Desktop Login Button -->
+            <a href="#" class="btn btn-dark desktop-login">Log In</a>
+            <!-- Mobile Controls -->
+            <div class="mobile-controls">
+                <a href="#" class="btn btn-dark mobile-login">Log In</a>
+                <div class="hamburger-menu">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Discover Your World, One Suggestion At A Time.</h1>
+                <p>From cozy cafes to sunset viewpoints, uncover the hidden gems that make your city unique.</p>
+                <div class="hero-search">
+                    <input type="text" placeholder="Search for places, e.g., 'barber shop'">
+                    <button class="btn btn-primary"><i class="fa-solid fa-search"></i></button>
+                </div>
+                <div class="popular-categories">
+                    <span>Or browse:</span>
+                    <a href="#">Cafes</a>
+                    <a href="#">Restaurants</a>
+                    <a href="#">Shops</a>
+                </div>
+            </div>
+            <div class="hero-image-feed">
+                <div class="feed-column" id="feed-col-1">
+                    <div class="feed-card"><img src="images/barber.jpg" alt="Cafe"></div>
+                    <div class="feed-card"><img src="images/cafe.jpg" alt="Park"></div>
+                    <div class="feed-card"><img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=400" alt="Boutique Shop"></div>
+                    <div class="feed-card"><img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=400" alt="Food"></div>
+                </div>
+                <div class="feed-column" id="feed-col-2">
+                    <div class="feed-card"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=400" alt="Restaurant"></div>
+                    <div class="feed-card"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=400" alt="Event"></div>
+                    <div class="feed-card"><img src="images/laun.jpg" alt="Bookstore"></div>
+                    <div class="feed-card"><img src="https://images.unsplash.com/photo-1517673400267-0251440c45dc?auto=format&fit=crop&w=400" alt="Art Gallery"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Features Section -->
+        <section class="features-section">
+            <div class="container">
+                 <div class="section-header text-center">
+                    <h2>Everything You Need, All In One Place</h2>
+                    <p>Our powerful features make discovery effortless and fun.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-text">
+                            <h4>Smart Search</h4>
+                            <p>Type in anything—haircut, coffee, laundry—and get results instantly.</p>
+                        </div>
+                        <div class="feature-icon"><i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                     <div class="feature-card">
+                        <div class="feature-text">
+                            <h4>Map + Details</h4>
+                            <p>Each result shows you a map, hours, service details, and ratings.</p>
+                        </div>
+                        <div class="feature-icon"><i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                     <div class="feature-card">
+                        <div class="feature-text">
+                            <h4>One Click Discovery</h4>
+                            <p>Our system adapts results based on distance, time, and popularity.</p>
+                        </div>
+                        <div class="feature-icon"><i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Popular Section (Carousel) -->
+        <section class="popular-section">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2>What's Popular</h2>
+                        <p>Explore top-rated places and activities loved by our community.</p>
+                    </div>
+                    <div class="nav-arrows">
+                        <button id="scroll-left" class="arrow-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button id="scroll-right" class="arrow-btn active"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                <div class="popular-carousel">
+                    <div class="popular-card">
+                        <img src="images/bar.jpg" alt="Bar">
+                        <div class="card-info"><h4>UPub</h4><p><i class="fa-solid fa-map-marker-alt"></i> Grandline </p></div>
+                        <div class="rating-badge"><i class="fa-solid fa-star"></i> 4.8</div>
+                    </div>
+                    <div class="popular-card">
+                        <img src="images/laundry.jpg" alt="Laundry Hub">
+                        <div class="card-info"><h4>One Big Wash</h4><p><i class="fa-solid fa-map-marker-alt"></i> Basak </p></div>
+                        <div class="rating-badge"><i class="fa-solid fa-star"></i> 4.9</div>
+                    </div>
+                    <div class="popular-card">
+                        <img src="images/coffee.jpg" alt="Coffee Shop">
+                        <div class="card-info"><h4>Matwels Coffee Station</h4><p><i class="fa-solid fa-map-marker-alt"></i> Davao </p></div>
+                        <div class="rating-badge"><i class="fa-solid fa-star"></i> 4.7</div>
+                    </div>
+                     <div class="popular-card">
+                        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=500" alt="Market">
+                        <div class="card-info"><h4>Mintal Market</h4><p><i class="fa-solid fa-map-marker-alt"></i> Mintal </p></div>
+                        <div class="rating-badge"><i class="fa-solid fa-star"></i> 4.8</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="how-it-works-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Getting Started is Simple!</h2>
+                    <p>Find what you're looking for in just a few clicks. It's discovery made easy.</p>
+                </div>
+                <div class="how-it-works-stepper">
+                    <div class="step-item">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h3>Search Anything</h3>
+                            <p>Use our smart search to type in exactly what you need—from a specific place to a general vibe.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h3>Discover Places</h3>
+                            <p>We'll show you the best matches nearby, complete with maps, reviews, and all the details you need.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h3>Decide & Go!</h3>
+                            <p>Compare your options, save your favorites, and get directions. Your next adventure awaits.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="cta-background"></div>
+            <div class="container">
+                <div class="cta-image">
+                    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800" alt="Team working">
+                </div>
+                <div class="cta-content">
+                    <h2>UNLEASH YOUR NEIGHBORHOOD WITH <span>SUGGESTIONHUB</span></h2>
+                    <p>Go beyond the surface and discover the places that make your community unique. Create an account to get personalized suggestions.</p>
+                    <a href="#" class="btn btn-primary">Create Your Free Account</a>
+                </div>
+            </div>
+        </section>
+
+       <!-- Final CTA Card -->
+        <div class="final-cta-card-wrapper">
+            <div class="final-cta-card">
+                 <div class="card-icon"><i class="fa-solid fa-rocket"></i></div>
+                 <div class="card-text">
+                     <h3>Ready to Start Exploring?</h3>
+                     <p>Join thousands of users finding their new favorite spots.</p>
+                 </div>
+                 <a href="#" class="btn btn-light">Sign Up, It's Free!</a>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2024 SuggestionHub. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
