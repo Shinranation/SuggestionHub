@@ -1,0 +1,106 @@
+hardcoded ito na code, please ignore
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Davao Business Map</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    #map {
+      height: 500px;
+      width: 100%;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .custom-menu {
+      background: white;
+      border: 2px solid #007bff;
+      padding: 10px;
+      border-radius: 6px;
+      min-width: 160px;
+      height: auto;
+      display: none;
+      position: absolute;
+      z-index: 1000;
+      pointer-events: none;
+      font-family: sans-serif;
+      font-weight: bold;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    }
+
+    .custom-icon {
+      font-size: 22px;
+      text-align: center;
+      line-height: 24px;
+    }
+  </style>
+</head>
+<body>
+
+<h2 style="text-align:center">📍 Davao City – Business Explorer</h2>
+<div id="map"></div>
+<div class="custom-menu" id="hoverMenu"></div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+  var map = L.map('map').setView([7.1907, 125.4553], 13);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  const hoverMenu = document.getElementById('hoverMenu');
+
+  // Sample Davao businesses
+  const businesses = [
+    { name: "Rekado Filipino Cuisine", lat: 7.095, lng: 125.61, category: "restaurant" },
+    { name: "Croft Chiropractic", lat: 7.0732, lng: 125.615, category: "service" },
+    { name: "Davao Central Laundry", lat: 7.1001, lng: 125.6204, category: "laundry" },
+    { name: "Aling Fopings Halo-Halo", lat: 7.0907, lng: 125.609, category: "restaurant" },
+    { name: "Happy Tech Repair Shop", lat: 7.081, lng: 125.601, category: "service" },
+    { name: "Seda Abreeza Hotel", lat: 7.0902, lng: 125.614, category: "hotel" }
+  ];
+
+  // Define emoji and highlight colors per category
+  const categoryStyles = {
+    restaurant: { icon: '🍽️', color: '#ff5c5c' },
+    laundry:    { icon: '🧺', color: '#4ecdc4' },
+    hotel:      { icon: '🏨', color: '#ffd700' },
+    service:    { icon: '🔧', color: '#aaa' }
+  };
+
+  businesses.forEach(biz => {
+    const { icon, color } = categoryStyles[biz.category] || { icon: '📍', color: '#888' };
+
+    const customIcon = L.divIcon({
+      className: 'custom-icon',
+      html: `<div style="color: ${color};">${icon}</div>`,
+      iconSize: [24, 24],
+      iconAnchor: [12, 12]
+    });
+
+    const marker = L.marker([biz.lat, biz.lng], { icon: customIcon }).addTo(map);
+
+    marker.on('mouseover', function (e) {
+      hoverMenu.innerHTML = `${biz.name}`;
+      hoverMenu.style.left = (e.originalEvent.pageX + 10) + 'px';
+      hoverMenu.style.top = (e.originalEvent.pageY - 20) + 'px';
+      hoverMenu.style.display = 'block';
+    });
+
+    marker.on('mouseout', function () {
+      hoverMenu.style.display = 'none';
+    });
+  });
+
+  map.on('mousemove', function (e) {
+    if (hoverMenu.style.display === 'block') {
+      hoverMenu.style.left = (e.originalEvent.pageX + 10) + 'px';
+      hoverMenu.style.top = (e.originalEvent.pageY - 20) + 'px';
+    }
+  });
+</script>
+
+</body>
+</html>
